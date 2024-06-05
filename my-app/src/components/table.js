@@ -1,7 +1,6 @@
 import '../App.css';
 import '../Css/table.css'
 import { useNavigate } from 'react-router-dom';
-import emptyPage from './emptyPage';
 
 
 
@@ -16,7 +15,7 @@ const allUsers = [
     var navigate = useNavigate();
     var moreInfo=(user)=>{
         console.log(user)
-        // navigate('/emptyPage');
+        navigate('/emptyPage');
     }
     var listOfUsers = allUsers.map(user=>(
         <tr>

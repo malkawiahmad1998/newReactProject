@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-function emptyPage(){
+function EmptyPage(){
     const Navigate = useNavigate();
 
     return( 
@@ -11,4 +11,4 @@ function emptyPage(){
         
     )
 }
-export default emptyPage;
+export default EmptyPage;
