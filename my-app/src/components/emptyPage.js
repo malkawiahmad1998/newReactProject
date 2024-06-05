@@ -1,8 +1,14 @@
+import { useNavigate } from "react-router-dom";
 function emptyPage(){
-    return(
-        <div>
+    const Navigate = useNavigate();
 
-        </div>
+    return( 
+        <>
+            <button onClick={()=>{Navigate('/table')}}>Back</button>
+        </>
+         
+            
+        
     )
 }
 export default emptyPage;
