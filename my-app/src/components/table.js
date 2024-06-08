@@ -15,7 +15,7 @@ const allUsers = [
     var navigate = useNavigate();
     var moreInfo=(user)=>{
         console.log(user)
-        navigate('/emptyPage');
+        navigate('/emptyPage',{state:user});
     }
     var listOfUsers = allUsers.map(user=>(
         <tr>
