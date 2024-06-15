@@ -7,9 +7,13 @@ import EmptyPage from './components/emptyPage'
 import LifecycleDemo from './components/life'
 import Card from './components/card';
 import ReadMore from './components/readmore';
+import { useContext, useEffect, useState } from 'react';
+import {ThemeProvider,ThemeContext} from './components/theme'
 
-function App() {
+function App() {  
   return (
+    <ThemeProvider>
+
     <div className="App">
        <BrowserRouter>
           <Link to='/table'>Click to table </Link>
@@ -18,7 +22,7 @@ function App() {
           <br></br>
           <Link to='/life'>Click to life</Link>
           <Link to='/card'>Click to Card</Link>
-
+          < ThemeToggleButton/>
 
 
           <Routes>
@@ -32,8 +36,23 @@ function App() {
 
           </Routes>
        </BrowserRouter>
+       
     </div>
+    </ThemeProvider>
   );
 }
 
+const ThemeToggleButton = () =>{
+  const {theme,toggleTheme} = useContext(ThemeContext);
+
+  useEffect(()=>{
+    document.body.className = theme;
+  },[theme])
+
+  return(
+    <button onClick={toggleTheme}>
+      change to {theme === 'light'?'dark':'light'}
+    </button>
+  )
+}
 export default App;

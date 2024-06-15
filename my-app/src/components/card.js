@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import '../Css/card.css'
 import { useNavigate } from "react-router-dom"
 
@@ -35,6 +35,11 @@ function Card(){
     </div>
         )
     )
+
+    useEffect(()=>{
+        alert('Fith Data')
+    },[items])
+
     return(
         <div class="card">
             <div class="card-content">
