@@ -43,14 +43,15 @@ function App() {
 }
 
 const ThemeToggleButton = () =>{
-  const {theme,toggleTheme} = useContext(ThemeContext);
+  const {theme,togletheme} = useContext(ThemeContext);
 
   useEffect(()=>{
+    console.log('g')
     document.body.className = theme;
   },[theme])
 
   return(
-    <button onClick={toggleTheme}>
+    <button onClick={togletheme}>
       change to {theme === 'light'?'dark':'light'}
     </button>
   )

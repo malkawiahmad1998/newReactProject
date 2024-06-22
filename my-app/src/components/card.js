@@ -22,12 +22,12 @@ function Card(){
 
 
     const listItems = items.map(item=>(
-        <div class="card-content">
-        <h2 class="card-title">{item.name}</h2>
-        <p class="card-description">{item.age}</p>
-        <p class="card-description">{item.weight}</p>
-        <a href="#" class="card-button">{item.height}</a>
-        <button class="styled-button" onClick={()=>{
+        <div className="card-content">
+        <h2 className="card-title">{item.name}</h2>
+        <p className="card-description">{item.age}</p>
+        <p className="card-description">{item.weight}</p>
+        <a href="#" className="card-button">{item.height}</a>
+        <button className="styled-button" onClick={()=>{
                 readMore(item);
         }
         }>read more</button>
@@ -36,14 +36,11 @@ function Card(){
         )
     )
 
-    useEffect(()=>{
-        alert('Fith Data')
-    },[items])
 
     return(
-        <div class="card">
-            <div class="card-content">
-                {listItems}
+        <div className="card">
+            <div className="card-content">
+                {/* {listItems} */}
             </div>
         </div>
     );

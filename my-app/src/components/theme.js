@@ -1,20 +1,12 @@
-import React,{useContext,createContext,useState} from "react";
+import React,{createContext,useState} from "react";
 
 var ThemeContext = createContext();
 
 var ThemeProvider = ({children})=>{
-    var [theme,setTheme] = useState('light')
+    var [theme,setTheme] = useState('light');
     var togletheme = ()=>{
-    console.log('u clicked')
-    if(theme==='light'){
-        
-      setTheme('dark')
-      console.log(theme)
-    }
-    else{
-      setTheme('light')
-      console.log(theme)
-    }
+      console.log('yyy')
+      setTheme((prev)=>(prev === 'dark'?'light':'dark'))
 }
 
     return(
