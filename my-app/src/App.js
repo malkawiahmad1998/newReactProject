@@ -9,10 +9,12 @@ import Card from './components/card';
 import ReadMore from './components/readmore';
 import { useContext, useEffect, useState } from 'react';
 import {ThemeProvider,ThemeContext} from './components/theme'
+import { DirProvider,DirContext } from './components/direction';
 
 function App() {  
   return (
     <ThemeProvider>
+      <DirProvider>
 
     <div className="App">
        <BrowserRouter>
@@ -23,6 +25,7 @@ function App() {
           <Link to='/life'>Click to life</Link>
           <Link to='/card'>Click to Card</Link>
           < ThemeToggleButton/>
+          < DirToggleButton/>
 
 
           <Routes>
@@ -38,6 +41,7 @@ function App() {
        </BrowserRouter>
        
     </div>
+    </DirProvider>
     </ThemeProvider>
   );
 }
@@ -57,3 +61,18 @@ const ThemeToggleButton = () =>{
   )
 }
 export default App;
+
+const DirToggleButton = () =>{
+  const {dir,toggleDir} = useContext(DirContext);
+
+  useEffect(()=>{
+   
+    document.body.dir = dir;
+  },[dir])
+
+  return(
+    <button onClick={toggleDir}>
+      change to {dir === 'ltr'?'rtl':'ltr'}
+    </button>
+  )
+}
