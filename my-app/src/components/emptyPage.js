@@ -11,13 +11,15 @@ function EmptyPage(){
     return( 
         <div>
         <button onClick={()=>{Navigate('/table')}}>Back</button>
-        {user?(<>
-        <h1>{user.id}</h1>
-        <h1>{user.name}</h1>
-        <h1>{user.amount}</h1>
-        <h1>{user.spendDate}</h1>
-        <h1>{user.category}</h1>
-        </>):(<h1>there is no data</h1>)
+        {user?(
+            <>
+                <h1>{user.id}</h1>
+                <h1>{user.name}</h1>
+                <h1>{user.amount}</h1>
+                <h1>{user.spendDate}</h1>
+                <h1>{user.category}</h1>
+            </>
+        ):(<h1>there is no data</h1>)
         }
 
 

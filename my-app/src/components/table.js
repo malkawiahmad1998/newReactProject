@@ -33,7 +33,7 @@ const allUsers = [
 
     return(
         <div>
-            <table>
+            <table id='tableColor'>
                 <thead>
                     <tr>
                         <th>id</th>

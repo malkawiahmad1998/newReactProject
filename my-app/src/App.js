@@ -11,14 +11,15 @@ import { useContext, useEffect, useState } from 'react';
 import {ThemeProvider,ThemeContext} from './components/theme'
 import { DirProvider,DirContext } from './components/direction';
 import Button from '@mui/material/Button';
-
+import UseRefExample from './components/useRef';
+import UseReducerExample from './components/reducer';
 function App() {  
   return (
     <ThemeProvider>
       <DirProvider>
 
     <div className="App">
-    <Button variant="contained">Hello world</Button>;
+    <Button variant="contained">Click with no action</Button>
        <BrowserRouter>
           <Link to='/table'>Click to table </Link>
           <br></br>
@@ -26,6 +27,10 @@ function App() {
           <br></br>
           <Link to='/life'>Click to life</Link>
           <Link to='/card'>Click to Card</Link>
+          <Link to='/useRef'>UseRefExample</Link>
+          <Link to='/reducer'>reducer</Link>
+
+
           < ThemeToggleButton/>
           < DirToggleButton/>
 
@@ -36,6 +41,8 @@ function App() {
             <Route path='/life' element={<LifecycleDemo />}></Route>
             <Route path='/card' element={<Card />}></Route>
             <Route path='/readmore' element={<ReadMore />}></Route>
+            <Route path='/useRef' element={<UseRefExample />}></Route>
+            <Route path='/reducer' element={<UseReducerExample />}></Route>
 
 
 
